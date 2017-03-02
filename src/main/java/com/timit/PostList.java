@@ -32,4 +32,9 @@ public class PostList {
         System.out.println(post);
         return post;
     }
+
+    public static Post add(Post post) {
+        posts.add(post);
+        return post;
+    }
 }

@@ -1,5 +1,6 @@
 package com.timit;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -17,10 +18,12 @@ public class Post {
     /**
      * 文章的标题
      */
+    @Size(min=2, max=30)
     private String title;
     /**
      * 文章的内容
      */
+    @Size(min=1)
     private String content;
     /**
      * 文章的创建时间
@@ -32,8 +35,8 @@ public class Post {
     private Date updated;
 
     public Post(){
-        title = "标题未定义";
-        content = "内容未给出";
+//        title = "请输入标题";
+//        content = "请输入内容";
         created = new Date();
         updated = created;
     }

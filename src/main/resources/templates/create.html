@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>新增文章</title>
+</head>
+<body>
+    <h3>新建博文</h3>
+    <form action="/posts/" method="post" th:object="${post}">
+        <div class="form-group">
+            <label for="title">标题</label>
+            <input type="text" class="form-control"
+                   id="title" name="title" th:field="*{title}"
+                   placeholder="文章标题" autofocus=""/>
+            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">标题长度必须在2-30个字符之间</p>
+        </div>
+        <div class="form-group">
+            <label for="content">内容</label>
+            <textarea class="form-control" id="content" name="content" th:field="*{content}"
+                      placeholder="文章的内容" rows="18"></textarea>
+            <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">内容不可为空</p>
+        </div>
+        <button type="submit" class="btn pull-right btn-primary">保存</button>
+    </form>
+</body>
+</html>
