@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+    <div class="blog-post">
+        <h3><a class="blog-post-title" href="#" th:text="${post.title}"></a></h3>
+
+        <p class="blog-post-meta" th:text="${#dates.format(post.created, 'yyyy-MM-dd')}"></p>
+
+        <!--
+        <p class="blog-post-meta" th:text="${post.created}">2015年12月3日</p>
+        -->
+        <p class="blog-post-content" th:text="${post.content}"></p>
+    </div>
+</body>
+</html>
