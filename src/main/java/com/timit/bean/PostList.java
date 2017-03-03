@@ -1,4 +1,6 @@
-package com.timit;
+package com.timit.bean;
+
+import com.timit.exception.PostNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +30,10 @@ public class PostList {
     }
 
     public static Post getPostById(long id) {
-        Post post = posts.stream().filter(p->p.getId().equals(id)).findFirst().get();
-        System.out.println(post);
-        return post;
+        return posts.stream()
+                .filter(p->p.getId().equals(id))
+                .findFirst()
+                .orElseThrow(PostNotFoundException::new);
     }
 
     public static Post add(Post post) {

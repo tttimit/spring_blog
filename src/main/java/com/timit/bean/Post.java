@@ -1,4 +1,4 @@
-package com.timit;
+package com.timit.bean;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
